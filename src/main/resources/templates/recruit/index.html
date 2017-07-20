@@ -8,7 +8,7 @@
 <meta name="description" content="ここにサイト説明を入れます">
 <meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
 <link rel="stylesheet" href="css/style.css">
-<script type="text/javascript" src="js/openclose.js"></script>
+<script type="text/javascript" src="/js/openclose.js"></script>
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -17,429 +17,305 @@
 </head>
 
 <body>
-<header>
-    <div class="inner">
-        <h1 id="logo">
-            <a href="index.html">
-            <img src="images/logo.png" alt="Sample Company">
-            </a>
-        </h1>
-        <div id="contact">
-            <p class="tel">
-                TEL:00-0000-0000
-                <span>
-                受付：00:00〜00:00　定休日：水曜日
-                </span>
-            </p>
-        </div>
-    </div>
-</header>
+	<header>
+		<div class="inner">
+			<h1 id="logo">
+				<a href="index.html">
+					<img src="images/logo.png" alt="Sample Company">
+				</a>
+			</h1>
+			<div id="contact">
+				<p class="tel">
+					TEL:00-0000-0000
+					<span> 受付：00:00〜00:00 定休日：水曜日 </span>
+				</p>
+			</div>
+		</div>
+	</header>
 
-<!--PC用（801px以上端末）メニュー-->
-<nav id="menubar">
-    <ul class="inner">
-        <li>
-            <a href="#about">
-            About SEKAPATO
-            </a>
-        </li>
-        <li>
-            <a href="#qa">
-            気になるご質問！
-            </a>
-        </li>
-        <li>
-            <a href="#setting">
-            セッティング迄の流れ
-            </a>
-        </li>
-        <li class="">
-            <a href="#inquiry">
-            お問合せ
-            </a>
-        </li>
-    </ul>
-</nav>
-<!--小さな端末用（800px以下端末）メニュー-->
-<nav id="menubar-s">
-    <ul>
-        <li>
-            <a href="#about">
-            About SEKAPATO
-            </a>
-        </li>
-        <li>
-            <a href="#qa">
-            気になるご質問！
-            </a>
-        </li>
-        <li>
-            <a href="#setting">
-            セッティングの流れ
-            </a>
-        </li>
-        <li class="">
-            <a href="#inquiry">
-            お問合せ
-            </a>
-        </li>
-    </ul>
-</nav>
-<div class="contents" >
-    <div class="inner">
-        <section id="about">
-            <h2>
-                About SEKAPATO
-            </h2>
-            <div class="list c1">
-                <img src="images/sample1.jpg" alt="" class="img">
-                <div class="text">
-                    <h4>
-                        Sample Title
-                    </h4>
-                    <p>
-                        当クラブに入会している男性達は、女性コンシェルジュが面談をし女性目線から見たゆとりある紳士な方ばかりです。
-                        <br>
-                        全ての男性会員に身分証の提示、職業、年収など確認し上質な時間を過ごせる社会的マナーをわきまえてる方ばかりです。
-                        <br>
-                        <br>
-                        あなたの夢を叶えます！稼げます！
-                        <br>
-                        女性は一切の費用は無料です。
-                        <br>
-                        是非ご登録下さい。
-                    </p>
-                </div>
-            </div>
-        </section>
-    </div>
-    <!--/inner-->
-</div>
-<!--/contents-->
+	<!--PC用（801px以上端末）メニュー-->
+	<nav id="menubar">
+		<ul class="inner">
+			<li>
+				<a href="#about"> About SEKAPATO </a>
+			</li>
+			<li>
+				<a href="#qa"> 気になるご質問！ </a>
+			</li>
+			<li>
+				<a href="#setting"> セッティング迄の流れ </a>
+			</li>
+			<li class="">
+				<a href="#contactform"> お問合せ </a>
+			</li>
+		</ul>
+	</nav>
+	<!--小さな端末用（800px以下端末）メニュー-->
+	<nav id="menubar-s">
+		<ul>
+			<li>
+				<a href="#about"> About SEKAPATO </a>
+			</li>
+			<li>
+				<a href="#qa"> 気になるご質問！ </a>
+			</li>
+			<li>
+				<a href="#setting"> セッティングの流れ </a>
+			</li>
+			<li class="">
+				<a href="#contactform"> お問合せ </a>
+			</li>
+		</ul>
+	</nav>
+	<div class="contents">
+		<div class="inner">
+			<ul class="must">
+				<li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerrMsg : fielderrMsg" th:text="${e.message}" />
+			</ul>
+		</div>
+	</div>
+	<div class="contents">
+		<div class="inner">
+			<section id="about">
+				<h2>About SEKAPATO</h2>
+				<div class="list c1">
+					<img src="images/sample1.jpg" alt="" class="img">
+					<div class="text">
+						<h4>Sample Title</h4>
+						<p>
+							当クラブに入会している男性達は、女性コンシェルジュが面談をし女性目線から見たゆとりある紳士な方ばかりです。 <br> 全ての男性会員に身分証の提示、職業、年収など確認し上質な時間を過ごせる社会的マナーをわきまえてる方ばかりです。 <br> <br> あなたの夢を叶えます！稼げます！ <br> 女性は一切の費用は無料です。 <br>
+							是非ご登録下さい。
+						</p>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!--/inner-->
+	</div>
+	<!--/contents-->
 
-<div class="contents">
-    <div class="inner">
-        <section  id="qa">
-            <h2>
-                気になるご質問！
-            </h2>
-            <div class="list">
-                <img src="images/sample1.jpg" alt="" class="img">
-                <div class="text">
-                    <h4>
-                        Q&A お食事だけでおこずかいが欲しい！
-                    </h4>
-                    <p>
-                        食事だけでも全然大丈夫です。
-                        <br>
-                        気が合えば発展は貴女次第です。
-                        <br>
-                        交通費相場は10000?30000円
-                    </p>
-                </div>
-            </div>
-            <div class="list">
-                <img src="images/sample1.jpg" alt="" class="img">
-                <div class="text">
-                    <h4>
-                        Q&A コンパなどもありますか？
-                    </h4>
-                    <p>
-                        はい！友達同士でご登録して頂ければセッティング可能です。
-                        <br>
-                        気が合えば発展は貴女次第です。
-                        <br>
-                        交通費相場は10000?30000円
-                    </p>
-                </div>
-            </div>
-            <div class="list">
-                <img src="images/sample1.jpg" alt="" class="img">
-                <div class="text">
-                    <h4>
-                        Q&A 夢があるので応援して欲しい！
-                    </h4>
-                    <p>
-                        当クラブの会員様は優しい紳士な方ばかりです。
-                        <br>
-                        貴女の夢をしっかりと語って見て下さい
-                        <br>
-                        。きっと応援してくれます。
-                        <br>
-                        交通費相場10000円?ask
-                    </p>
-                </div>
-            </div>
-            <div class="list">
-                <img src="images/sample1.jpg" alt="" class="img">
-                <div class="text">
-                    <h4>
-                        Q&A 良いパパを探したい？
-                    </h4>
-                    <p>
-                        1人の紳士と長く付き合いたい不特定多数は嫌と言う女性は沢山います。
-                        <br>
-                        当クラブの男性会員も同じ考えの方が多いです。
-                        <br>
-                        きっと貴女に会った紳士が見つかります。
-                        <br>
-                        交通費相場10000円?ask
-                    </p>
-                </div>
-            </div>
-            <div class="list">
-                <img src="images/sample1.jpg" alt="" class="img">
-                <div class="text">
-                    <h4>
-                        Q&A 割り切ったお付き合いがしたい！
-                    </h4>
-                    <p>
-                        面倒くさい関係になりたくない。
-                        <br>
-                        その日だけ遊びたい。
-                        <br>
-                        旅行だけ行きたいなど全然大丈夫です。
-                        <br>
-                        同じ考えの男性会員も沢山おられます。
-                        <br>
-                        交通費相場10000円?ask
-                    </p>
-                </div>
-            </div>
-            <div class="list">
-                <img src="images/sample1.jpg" alt="" class="img">
-                <div class="text">
-                    <h4>
-                        Q&A 毎月決まったおこずかいが欲しい！
-                    </h4>
-                    <p>
-                        是非ご相談下さい。
-                        <br>
-                        貴女に合った紳士をご紹介致します。
-                    </p>
-                </div>
-            </div>
-            <div class="list">
-                <img src="images/sample1.jpg" alt="" class="img">
-                <div class="text">
-                    <h4>
-                        Q&A 恋人が出来たりもするの？
-                    </h4>
-                    <p>
-                        もちろんあります。
-                        <br>
-                        当クラブには独身男性も沢山おられます。
-                        <br>
-                        当クラブは出会いの場をセッティングするだけなので、そこからの発展は貴女次第です。
-                    </p>
-                </div>
-            </div>
-            <div class="list">
-                <img src="images/sample1.jpg" alt="" class="img">
-                <div class="text">
-                    <h4>
-                    </h4>
-                    <p>
-                        当クラブは面接 面談は全て女性コンシェルジュが行いますのでお気軽にご応募下さい。
-                        <br>
-                        未成年確認の為身分証だけご提示願います。
-                        <br>
-                        個人情報保護  秘密厳守はお約束致します。
-                        <br>
-                        代表 前田恵美
-                    </p>
-                </div>
-            </div>
-            <h2>
-                代表からのメッセージ
-            </h2>
-            
-            <!--<h3></h3>-->
-            <p>
-                当クラブは面接 面談は全て女性コンシェルジュが行いますのでお気軽にご応募下さい。
-                <br>
-                未成年確認の為身分証だけご提示願います。
-                <br>
-                個人情報保護  秘密厳守はお約束致します。
-                <br>
-                代表 前田恵美
-            </p>
-        </section>
-    </div>
-    <!--/inner-->
-</div>
-<!--/contents-->
+	<div class="contents">
+		<div class="inner">
+			<section id="qa">
+				<h2>気になるご質問！</h2>
+				<div class="list">
+					<img src="images/sample1.jpg" alt="" class="img">
+					<div class="text">
+						<h4>Q&A お食事だけでおこずかいが欲しい！</h4>
+						<p>
+							食事だけでも全然大丈夫です。 <br> 気が合えば発展は貴女次第です。 <br> 交通費相場は10000?30000円
+						</p>
+					</div>
+				</div>
+				<div class="list">
+					<img src="images/sample1.jpg" alt="" class="img">
+					<div class="text">
+						<h4>Q&A コンパなどもありますか？</h4>
+						<p>
+							はい！友達同士でご登録して頂ければセッティング可能です。 <br> 気が合えば発展は貴女次第です。 <br> 交通費相場は10000?30000円
+						</p>
+					</div>
+				</div>
+				<div class="list">
+					<img src="images/sample1.jpg" alt="" class="img">
+					<div class="text">
+						<h4>Q&A 夢があるので応援して欲しい！</h4>
+						<p>
+							当クラブの会員様は優しい紳士な方ばかりです。 <br> 貴女の夢をしっかりと語って見て下さい <br> 。きっと応援してくれます。 <br> 交通費相場10000円?ask
+						</p>
+					</div>
+				</div>
+				<div class="list">
+					<img src="images/sample1.jpg" alt="" class="img">
+					<div class="text">
+						<h4>Q&A 良いパパを探したい？</h4>
+						<p>
+							1人の紳士と長く付き合いたい不特定多数は嫌と言う女性は沢山います。 <br> 当クラブの男性会員も同じ考えの方が多いです。 <br> きっと貴女に会った紳士が見つかります。 <br> 交通費相場10000円?ask
+						</p>
+					</div>
+				</div>
+				<div class="list">
+					<img src="images/sample1.jpg" alt="" class="img">
+					<div class="text">
+						<h4>Q&A 割り切ったお付き合いがしたい！</h4>
+						<p>
+							面倒くさい関係になりたくない。 <br> その日だけ遊びたい。 <br> 旅行だけ行きたいなど全然大丈夫です。 <br> 同じ考えの男性会員も沢山おられます。 <br> 交通費相場10000円?ask
+						</p>
+					</div>
+				</div>
+				<div class="list">
+					<img src="images/sample1.jpg" alt="" class="img">
+					<div class="text">
+						<h4>Q&A 毎月決まったおこずかいが欲しい！</h4>
+						<p>
+							是非ご相談下さい。 <br> 貴女に合った紳士をご紹介致します。
+						</p>
+					</div>
+				</div>
+				<div class="list">
+					<img src="images/sample1.jpg" alt="" class="img">
+					<div class="text">
+						<h4>Q&A 恋人が出来たりもするの？</h4>
+						<p>
+							もちろんあります。 <br> 当クラブには独身男性も沢山おられます。 <br> 当クラブは出会いの場をセッティングするだけなので、そこからの発展は貴女次第です。
+						</p>
+					</div>
+				</div>
+				<div class="list">
+					<img src="images/sample1.jpg" alt="" class="img">
+					<div class="text">
+						<h4></h4>
+						<p>
+							当クラブは面接 面談は全て女性コンシェルジュが行いますのでお気軽にご応募下さい。 <br> 未成年確認の為身分証だけご提示願います。 <br> 個人情報保護 秘密厳守はお約束致します。 <br> 代表 前田恵美
+						</p>
+					</div>
+				</div>
+				<h2>代表からのメッセージ</h2>
 
-<div class="contents">
-    <div class="inner">
-        <section  id="setting">
-            <h2>
-                セッティング迄の流れ
-            </h2>
-            <p>
-                当クラブの女性コンシェルジュと面接 面談して頂きます。
-                内容を理解して頂ければ入会プロフィール作成ポートレート撮影となります。
-                
-                後は男性会員からのオファーを待ちます。
-                貴女から好みのタイプをお聞きして男性会員にオファーする事も可能です。女性会員は一切無料です。
-                
-                
-                男性会員から当クラブにオファーがあると
-                当クラブより貴女へ空いてる日と時間帯をお聞き致します。(LINE メール等)
-                男性会員と女性会員の日時をすり合わせ致します。日時が合えば待合わせ場所など双方に報告致します。(お互いの服装 特徴をお伝え致します)
-            </p>
-            <h3>待合わせ場所例</h3>
-            <p>
-                泉の広場など公共の場所
-                シティホテルのロビー ラウンジ
-                綺麗な雰囲気の良いカフェ
-                何処のイタリアンの店など
-            </p>
-            <p>
-                男性に会われてどうしても合わない場合は、しっかりとその旨をお伝え下さい。
-                紳士な方ばかりなので問題は御座いません。
-                交通費は頂いて下さい。
-            </p>
-            <h3>さあデートの始まりです。</h3>
-            <p>
-                優しい紳士な男性と有意義な時をお過ごし下さい。食事だけでも良し、気が合えばお酒も良し交際に発展するかも？
-                出会ってからは当クラブは一切関係御座いませんので大人のお付き合いをお楽しみ下さい。
-            </p>
-            <h3>こんな時どうしよう？</h3>
-            <p>
-                交際は始まったのですがやっぱりタイプじゃ無かった怖くて断れない。
-                紳士な男性ばかりですが中には気を悪くされる方もおられます。トラブルになりそうな時は等クラブの女性コンシェルジュに申しつけ下さい。敏速に対応致します。
-            </p>
-        </section>
-    </div>
-    <!--/inner-->
-</div>
-<!--/contents-->
+				<!--<h3></h3>-->
+				<p>
+					当クラブは面接 面談は全て女性コンシェルジュが行いますのでお気軽にご応募下さい。 <br> 未成年確認の為身分証だけご提示願います。 <br> 個人情報保護 秘密厳守はお約束致します。 <br> 代表 前田恵美
+				</p>
+			</section>
+		</div>
+		<!--/inner-->
+	</div>
+	<!--/contents-->
 
-<div class="contents">
-    <div class="inner">
-        <section  id="inquiry">
-            <h2>
-                お問い合わせフォーム
-                <span>
-                Contact
-                </span>
-            </h2>
-            
-            <!-- フォームの情報はここからです -->
-            <form name="form1" enctype="multipart/form-data" method="post" action="">
-                <input type="hidden" name="mode" value="form">
-                <table class="ta1">
-                    <tr>
-                        <th width="150">お名前
-                            <span style="color:red">
-                            ※
-                            </span></th>
-                        <td><input name="item1" value="" type="text" size="40" maxlength="500" class="ws"></td>
-                    </tr>
-                    <tr>
-                        <th width="150">メールアドレス
-                            <span style="color:red">
-                            ※
-                            </span></th>
-                        <td><input name="item2" value="" type="text" size="40" maxlength="500" class="ws"></td>
-                    </tr>
-                    <tr>
-                        <th width="150">メールアドレス(確認用)
-                            <span style="color:red">
-                            ※
-                            </span></th>
-                        <td><input name="item2" value="" type="text" size="40" maxlength="500" class="ws"></td>
-                    </tr>
-                    <tr>
-                        <th>お問い合わせ内容
-                            <span style="color:red">
-                            ※
-                            </span></th>
-                        <td><textarea name="item3" cols="40" rows="10" class="wl">【面談希望日】
+	<div class="contents">
+		<div class="inner">
+			<section id="setting">
+				<h2>セッティング迄の流れ</h2>
+				<p>当クラブの女性コンシェルジュと面接 面談して頂きます。 内容を理解して頂ければ入会プロフィール作成ポートレート撮影となります。 後は男性会員からのオファーを待ちます。 貴女から好みのタイプをお聞きして男性会員にオファーする事も可能です。女性会員は一切無料です。 男性会員から当クラブにオファーがあると 当クラブより貴女へ空いてる日と時間帯をお聞き致します。(LINE メール等)
+					男性会員と女性会員の日時をすり合わせ致します。日時が合えば待合わせ場所など双方に報告致します。(お互いの服装 特徴をお伝え致します)</p>
+				<h3>待合わせ場所例</h3>
+				<p>泉の広場など公共の場所 シティホテルのロビー ラウンジ 綺麗な雰囲気の良いカフェ 何処のイタリアンの店など</p>
+				<p>男性に会われてどうしても合わない場合は、しっかりとその旨をお伝え下さい。 紳士な方ばかりなので問題は御座いません。 交通費は頂いて下さい。</p>
+				<h3>さあデートの始まりです。</h3>
+				<p>優しい紳士な男性と有意義な時をお過ごし下さい。食事だけでも良し、気が合えばお酒も良し交際に発展するかも？ 出会ってからは当クラブは一切関係御座いませんので大人のお付き合いをお楽しみ下さい。</p>
+				<h3>こんな時どうしよう？</h3>
+				<p>交際は始まったのですがやっぱりタイプじゃ無かった怖くて断れない。 紳士な男性ばかりですが中には気を悪くされる方もおられます。トラブルになりそうな時は等クラブの女性コンシェルジュに申しつけ下さい。敏速に対応致します。</p>
+			</section>
+		</div>
+		<!--/inner-->
+	</div>
+	<!--/contents-->
+
+	<div class="contents">
+		<div class="inner">
+			<section id="contactform">
+				<h2>
+					お問い合わせフォーム
+					<span> Contact </span>
+				</h2>
+
+				<!-- フォームの情報はここからです -->
+				<form th:action="@{/send}" th:object="${form}" method="post">
+
+
+					<table class="ta1">
+						<tr>
+							<th width="150">
+								お名前
+								<span style="color: red"> ※ </span>
+							</th>
+							<td>
+								<input th:field="*{name}" th:errorclass="fieldError" class="form-control" id="name" placeholder="前田恵美" type="text" size="40" maxlength="500" class="ws">
+							</td>
+						</tr>
+						<tr>
+							<th width="150">
+								メールアドレス
+								<span style="color: red"> ※ </span>
+							</th>
+							<td>
+								<input th:field="*{mailAddress}" th:errorclass="fieldError" class="form-control" id="mailAddress" placeholder="mail@sekapato.com" type="text" size="40" maxlength="500" class="ws">
+							</td>
+						</tr>
+						<tr>
+							<th width="150">
+								メールアドレス(確認用)
+								<span style="color: red"> ※ </span>
+							</th>
+							<td>
+								<input th:field="*{mailAddressConfirm}" th:errorclass="fieldError" class="form-control" id="mailAddressConfirm" placeholder="mail@sekapato.com" type="text" size="40" maxlength="500" class="ws">
+							</td>
+						</tr>
+						<tr>
+							<th>
+								お問い合わせ内容
+								<span style="color: red"> ※ </span>
+							</th>
+							<td>
+								<textarea th:field="*{message}" th:errorclass="fieldError" class="form-control" id="message" cols="40" rows="10" class="wl">【面談希望日】
 ■第1希望日時
 
 ■第2希望日時
 
 ■第3希望日時
-</textarea></td>
-                    </tr>
-                </table>
-                <div class="c">
-                    <input type="submit" value="内容を確認する">
-                    &nbsp;
-                    <input type="reset" value="リセット">
-                </div>
-            </form>
-        </section>
-    </div>
-    <!--/inner-->
-</div>
-<!--/contents-->
-<p id="pagetop" class="inner">
-    <a href="#">
-    ↑
-    </a>
-</p>
-<footer>
-    <div id="footermenu" class="inner">
-        <ul>
-            <li>
-                <a href="#">
-                About SEKAPATO
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                気になるご質問！
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                セッティングの流れ
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                お問合せ
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!--/footermenu-->
-    
-    <div id="copyright">
-        <small>Copyright&copy;
-        <a href="index.html">
-        SEKAPATO
-        </a>
-        All Rights Reserved.</small>
-        <span class="pr">
-        </span>
-    </div>
-</footer>
+</textarea>
+							</td>
+						</tr>
+					</table>
+					<div class="c">
+						<input type="submit" id="submit" value="内容を確認する"> &nbsp;
+						<!-- <input type="reset" value="リセット"> -->
+					</div>
+				</form>
+			</section>
+		</div>
+		<!--/inner-->
+	</div>
+	<!--/contents-->
+	
+	
+	<p id="pagetop" class="inner">
+		<a href="#"> ↑ </a>
+	</p>
+	<footer>
+		<div id="footermenu" class="inner">
+			<ul>
+				<li>
+					<a href="#"> About SEKAPATO </a>
+				</li>
+				<li>
+					<a href="#"> 気になるご質問！ </a>
+				</li>
+				<li>
+					<a href="#"> セッティングの流れ </a>
+				</li>
+				<li>
+					<a href="#"> お問合せ </a>
+				</li>
+			</ul>
+		</div>
+		<!--/footermenu-->
 
-<!--スマホ用更新情報　800px以下-->
-<script type="text/javascript">
-if (OCwindowWidth() <= 800) {
-    open_close("newinfo_hdr", "newinfo");
-}
-</script>
+		<div id="copyright">
+			<small>Copyright&copy; <a href="index.html"> SEKAPATO </a> All Rights Reserved.
+			</small>
+			<span class="pr"> </span>
+		</div>
+	</footer>
 
-<!--メニューの３本バー-->
-<div id="menubar_hdr" class="close">
-    <span>
-    </span>
-    <span>
-    </span>
-    <span>
-    </span>
-</div>
-<!--メニューの開閉処理条件設定　800px以下-->
-<script type="text/javascript">
-if (OCwindowWidth() <= 800) {
-    open_close("menubar_hdr", "menubar-s");
-}
-</script>
+	<!--スマホ用更新情報　800px以下-->
+	<script type="text/javascript">
+		if (OCwindowWidth() <= 800) {
+			open_close("newinfo_hdr", "newinfo");
+		}
+	</script>
+
+	<!--メニューの３本バー-->
+	<div id="menubar_hdr" class="close">
+		<span> </span>
+		<span> </span>
+		<span> </span>
+	</div>
+	<!--メニューの開閉処理条件設定　800px以下-->
+	<script type="text/javascript">
+		if (OCwindowWidth() <= 800) {
+			open_close("menubar_hdr", "menubar-s");
+		}
+	</script>
 </body>
 </html>

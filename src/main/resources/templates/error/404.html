@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:replace="common/head_noindex :: head"></div>
+
+<body>
+	<!-- START: box-wrap -->
+	<div class="box-wrap">
+
+		<!-- START: main -->
+
+		<!-- START:fh5co-product-section -->
+		<div id="fh5co-product-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section">
+						<div class="not_found">
+							<h2>404 Not Found</h2>
+							<h3>ページが表示できません</h3>
+							<p>このページは5秒後にトップページに移動します</p>
+							<p>
+								切り替わらない場合は
+								<a href="http://www.byte-mouse.com/">こちら</a>
+								をクリックしてください。
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END: main -->
+
+		<!-- START: footer -->
+		<div th:replace="common/footer :: footer"></div>
+		<!-- END: footer -->
+	</div>
+	<!-- END: box-wrap -->
+
+	<!-- START : js -->
+	<div th:include="common/js :: js"></div>
+	<!-- END : js -->
+</body>
+</html>
