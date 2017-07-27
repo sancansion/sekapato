@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<div th:replace="common/head_noindex :: head"></div>
+<meta name="robots" content="noindex"/>
+<meta http-equiv="refresh" content="500;URL=http://sekapato.com/recruit" />
 
 <body>
 	<!-- START: box-wrap -->
@@ -16,26 +17,15 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section">
 						<h3>Application Error</h3>
-						<p>このページは5秒後にトップページに移動します</p>
-						<p>
-							切り替わらない場合は
-							<a href="http://www.byte-mouse.com/">こちら</a>
-							をクリックしてください。
-						</p>
-					</div>
+						
 				</div>
 			</div>
 		</div>
 		<!-- END: main -->
 
-		<!-- START: footer -->
-		<div th:replace="common/footer :: footer"></div>
+
 		<!-- END: footer -->
 	</div>
-	<!-- END: box-wrap -->
 
-	<!-- START : js -->
-	<div th:include="common/js :: js"></div>
-	<!-- END : js -->
 </body>
 </html>

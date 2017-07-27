@@ -8,13 +8,12 @@ public class MailForm {
     @NotBlank(message = "お名前を入力して下さい")
     public String name;
 
-
     @NotBlank(message = "メールアドレスを入力して下さい")
     @Email(message = "メールアドレスの形式が不正です")
     public String mailAddress;
-    
-    @NotBlank(message = "メールアドレスを入力して下さい")
-    @Email(message = "メールアドレスの形式が不正です")
+
+    @NotBlank(message = "メールアドレス(確認用)を入力して下さい")
+    @Email(message = "メールアドレス(確認用)の形式が不正です")
     public String mailAddressConfirm;
 
     @NotBlank(message = "お問い合わせ内容を入力して下さい")
@@ -57,8 +56,5 @@ public class MailForm {
         return "MailForm [name=" + name + ", mailAddress=" + mailAddress + ", mailAddressConfirm=" + mailAddressConfirm
                 + ", message=" + message + "]";
     }
-
-
-
 
 }

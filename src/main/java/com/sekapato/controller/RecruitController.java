@@ -47,6 +47,12 @@ public class RecruitController {
 
   @RequestMapping(value = "/send", method = RequestMethod.POST)
   public String send(@ModelAttribute("form") @Valid MailForm form, BindingResult result, Model model) {
+//      if(!form.mailAddress.equals(form.mailAddressConfirm)){
+//          return "recruit/index";
+//      }
+//      
+//      
+//      
       if (result.hasErrors()) {
           for (FieldError err : result.getFieldErrors()) {
               logger.warn("error code = [" + err.getCode() + "]");
