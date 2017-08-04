@@ -1,9 +1,17 @@
 package com.sekapato.entity;
 
+import javax.persistence.Column;
+
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
+import com.tuyano.springboot.Phone;
+
 public class MailForm {
+
+    public MailForm() {
+
+    }
 
     @NotBlank(message = "お名前を入力して下さい")
     public String name;
@@ -13,7 +21,8 @@ public class MailForm {
     public String mailAddress;
 
     @NotBlank(message = "メールアドレス(確認用)を入力して下さい")
-    @Email(message = "メールアドレス(確認用)の形式が不正です")
+//    @Column(nullable = true)
+//    @Phone(onlyNumber = true)
     public String mailAddressConfirm;
 
     @NotBlank(message = "お問い合わせ内容を入力して下さい")

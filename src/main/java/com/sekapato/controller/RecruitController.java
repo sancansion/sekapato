@@ -9,7 +9,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,24 +38,26 @@ public class RecruitController {
 
   
   Logger logger = LoggerFactory.getLogger(RecruitController.class);
-
-
-  @ModelAttribute
-  public MailForm setMailForm() {
-      return new MailForm();
-  }
-
-
+  Errors errors;
 
   @RequestMapping(value = "/send", method = RequestMethod.POST)
   public String send(@ModelAttribute("form") @Valid MailForm form, BindingResult result, Model model) {
-//      if(!form.mailAddress.equals(form.mailAddressConfirm)){
-//          return "recruit/index";
-//      }
-//      
-//      
-//      
+     
+      Errors errors = new BeanPropertyBindingResult(form, "form");
+      
+      if(!form.mailAddress.equals(form.mailAddressConfirm)){
+          errors.rejectValue("mailAddress", "mailAddress.notequal");
+         
+          result.rejectValue("mailAddress", null , "メールアドレスが一致しません");
+          System.out.println("Email are not same");
+          return "recruit/index";
+      }
+      
+      
+      
       if (result.hasErrors()) {
+          
+       
           for (FieldError err : result.getFieldErrors()) {
               logger.warn("error code = [" + err.getCode() + "]");
           }

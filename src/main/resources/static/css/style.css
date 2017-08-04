@@ -9,8 +9,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 	color: #666; /*全体の文字色*/
-	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo,
-		Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; /*フォント種類*/
+	font-family: 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 	font-size: 15px; /*文字サイズ*/
 	line-height: 2; /*行間*/
 	background: #fff; /*背景色*/
@@ -42,7 +41,6 @@ img {
 
 table {
 	border-collapse: collapse;
-	
 	border-spacing: 0;
 }
 
@@ -174,7 +172,8 @@ header #logo {
 ---------------------------------------------------------------------------*/
 #mainimg {
 	box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
-	/*ボックスの影。右に、下に、広げる幅、0,0,0は黒の事で0.2は透明度20%の事。*/
+	margin-bottom: -20px;
+	text-align: center;
 }
 
 /*コンテンツ
@@ -222,17 +221,92 @@ header #logo {
 /*コンテンツの段落タグ設定*/
 .contents p {
 	padding: 0px 20px 15px; /*上、左右、下への余白*/
-}d
-.contents p.text-left{
-    text-align:left;
 }
 
-.contents p.text-right{
-    text-align:right;
+
+.contents p.text-left {
+	text-align: left;
 }
+
+.contents p.text-right {
+	text-align: right;
+}
+
+.contents p.text-center {
+	text-align: center;
+}
+
 .contents h2+p, .contents h3+p {
 	margin-top: -10px;
 }
+
+.message {
+	width: 60%;
+	float: right;
+}
+
+.contents .photo {
+	width: 40%;
+	float: left;
+}
+
+.contents .photo img {
+	margin-bottom: 5px;
+}
+
+.line {
+	background-color: #1dcd00;
+	color: #fff;
+	
+	font-wight: bold;
+	position: relative;
+	background: #1dcd00;
+	box-shadow: 0px 0px 0px 2px #4e9a06;
+	padding: 15px;
+	border-radius:0.5em;
+	border: dashed 1px white;
+	text-align:center;
+}
+
+
+
+.title {
+	line-height:30px;
+	font-size: 24px;
+	vertical-align:middle;
+}
+
+.id {
+	font-size: 24px;
+	text-align:center;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+.freedial {
+	position: relative;
+	background: #F9C;
+	box-shadow: 0px 0px 0px 2px #F6C;
+	border: dashed 1px white;
+	padding: 15px;
+	color: #FFF;
+	border-radius:0.2em;
+	text-align:center;
+}
+
+.mail {
+    position: relative;
+    background: #F0F8FF;
+    box-shadow: 0px 0px 0px 2px #00008B;
+    border: dashed 1px #00BFFF;
+    padding: 15px;
+    color: #4169E1;
+    border-radius:0.2em;
+    text-align:center;
+}
+
 
 /*メインコンテンツ
 ---------------------------------------------------------------------------*/
@@ -296,7 +370,7 @@ header #logo {
 .list .text {
 	font-size: 13px; /*文字サイズ*/
 	line-height: 1.5; /*行間*/
-	height: 14em;
+	height: 16em;
 	overflow: hidden; /*高さを超えると非表示になる*/
 }
 
@@ -532,53 +606,51 @@ footer .pr {
 /*テーブル
 ---------------------------------------------------------------------------*/
 /*ta1設定*/
-.ta1 th{
+.ta1 th {
 	width: 100%;
 	text-align: left;
 }
 
 .ta1 {
-		margin: 30px auto;
-	}
-	.ta1 th, .ta1 td {
-		width: 100%;
-		display: block;
-		border-top: none;
-		font-size:16px;
-		line-height:36px;
-    
- 
-	}
-	.ta1 tr:first-child ta1 {
-		border-top: 1px solid #ddd;
-	}
-
-
-input.contact{
-height:25px;
+	margin: 30px auto;
 }
-.confirm th{
-    width: 100%;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+
+.ta1 th, .ta1 td {
+	width: 100%;
+	display: block;
+	border-top: none;
+	font-size: 16px;
+	line-height: 36px;
+}
+
+.ta1 tr:first-child ta1 {
+	border-top: 1px solid #ddd;
+}
+
+input.contact {
+	height: 25px;
+}
+
+.confirm th {
+	width: 100%;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
 }
 
 @media only screen and (max-width:480px) {
-    .confirm {
-        margin: 30px auto;
-    }
-    .confirm th, .confirm td {
-        width: 200px;
-        display: block;
-        border-top: none;
-        font-size:16px;
-        line-height:36px;
-    
- 
-    }
-    .confirm tr:first-child confirm {
-        border-top: 1px solid #ddd;
-    }
+	.confirm {
+		margin: 30px auto;
+	}
+	.confirm th, .confirm td {
+		width: 200px;
+		display: block;
+		border-top: none;
+		font-size: 16px;
+		line-height: 36px;
+	}
+	.confirm tr:first-child confirm {
+		border-top: 1px solid #ddd;
+	}
 }
 /*.ta1 {
     width: 100%;
@@ -621,14 +693,15 @@ input[type="submit"], input[type="button"], input[type="reset"] {
 	font-size: 16px; /*文字サイズ*/
 	border: 1px solid #ccc;
 }
+
 button {
-    padding: 10px 30px; /*ボタン内の余白*/
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 30px; /*角丸のサイズ*/
-    background: linear-gradient(#fff, #eee); /*グラデーション*/
-    font-size: 16px; /*文字サイズ*/
-    border: 1px solid #ccc;
+	padding: 10px 30px; /*ボタン内の余白*/
+	margin-bottom: 20px;
+	border: none;
+	border-radius: 30px; /*角丸のサイズ*/
+	background: linear-gradient(#fff, #eee); /*グラデーション*/
+	font-size: 16px; /*文字サイズ*/
+	border: 1px solid #ccc;
 }
 /*マウスオン時の設定*/
 input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover
@@ -956,14 +1029,13 @@ img.fl {
 	}
 	/*ボックス内の画像*/
 	.list .img {
-		
 		height: auto;
 	}
 	.list .text {
 		font-size: 13px; /*文字サイズ*/
 		line-height: 1.5; /*行間*/
 		overflow: hidden; /*高さを超えると非表示になる*/
-	padding:5px;
+		padding: 5px;
 	}
 }
 
@@ -1084,50 +1156,48 @@ img.fl {
 	}
 }
 
-
-.must{
-	font-size:10px;
-	color:red;
-}
+.must {
+	font-size: 10px;
+	color: red;
 }
 
-.mb5{
-	margin-bottom:5px;
+}
+.mb5 {
+	margin-bottom: 5px;
 }
 
-.mb10{
-    margin-bottom:10px;
+.mb10 {
+	margin-bottom: 10px;
 }
 
-.mb15{
-    margin-bottom:15px;
+.mb15 {
+	margin-bottom: 15px;
 }
 
-.mb20{
-    margin-bottom:20px;
+.mb20 {
+	margin-bottom: 20px;
 }
 
-.mb25{
-    margin-bottom:25px;
+.mb25 {
+	margin-bottom: 25px;
 }
 
-.mt5{
-	margin-top:5px;
+.mt5 {
+	margin-top: 5px;
 }
 
-.mt10{
-    margin-top:10px;
+.mt10 {
+	margin-top: 10px;
 }
 
-.mt15{
-    margin-top:15px;
+.mt15 {
+	margin-top: 15px;
 }
 
-.mt20{
-    margin-top:20px;
+.mt20 {
+	margin-top: 20px;
 }
 
-.mt25{
-    margin-top:25px;
+.mt25 {
+	margin-top: 25px;
 }
-
