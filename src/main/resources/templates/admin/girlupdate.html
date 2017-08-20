@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>UPDATE</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/css/bootstrap.css" rel="stylesheet" />
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+<!-- Custom styles for this template -->
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<form th:action="@{/updategirl}" th:object="${girl}" method="post">
+					<!-- <ul class="must">
+						<li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerrMsg : fielderrMsg" th:text="${e.message}" />
+
+					</ul> -->
+					
+					<div class="form-group">
+                        <label for="id">ID</label>
+                        <input th:field="*{id}" th:errorclass="fieldError" type="text" class="form-control" id="id">
+                    </div>
+					<!--   Name -->
+					<div class="form-group">
+						<label for="realName">氏名(本名)</label>
+						<input th:field="*{realName}" th:errorclass="fieldError" type="text" class="form-control" id="realName" placeholder="山田 花子">
+					</div>
+
+					<!--   Kana -->
+					<div class="form-group">
+						<label for="realName">カナ(本名)</label>
+						<input th:field="*{realKana}" th:errorclass="fieldError" type="text" class="form-control" id="realKana" placeholder="ヤマダハナコ">
+					</div>
+					<!--   /Name -->
+
+
+					<!-- 	Name -->
+					<div class="form-group">
+						<label for="name">氏名(表示用)</label>
+						<input th:field="*{name}" th:errorclass="fieldError" type="text" class="form-control" id="name" placeholder="山田 花子">
+					</div>
+
+					<!--   Kana -->
+					<div class="form-group">
+						<label for="kana">カナ(表示用)</label>
+						<input th:field="*{kana}" th:errorclass="fieldError" type="text" class="form-control" id="kana" placeholder="ヤマダハナコ">
+					</div>
+					<!--   /Name -->
+
+					<!--   realAge -->
+					<div class="form-group">
+						<label for="kana">年齢 </label>
+						<input th:field="*{realAge}" th:errorclass="fieldError" type="text" class="form-control" id="realAge" placeholder="25">
+					</div>
+					<!--   /realAge -->
+
+					<!--   age -->
+					<div class="form-group">
+						<label for="kana">年齢（表示用） </label>
+						<input th:field="*{age}" th:errorclass="fieldError" type="text" class="form-control" id="age" placeholder="20">
+					</div>
+					<!--   /age -->
+
+					<!--   address -->
+					<div class="form-group">
+						<label for="address">住所 </label>
+						<input th:field="*{address}" th:errorclass="fieldError" type="text" class="form-control" id="address" placeholder="大阪市中央区">
+					</div>
+					<!--   /address -->
+
+					<!--   tel -->
+					<div class="form-group">
+						<label for="tel">電話番号</label>
+						<input th:field="*{tel}" th:errorclass="fieldError" type="tel" class="form-control" id="tel" placeholder="090-1234-5678">
+					</div>
+					<!--   /tel -->
+
+					<!--   lineId -->
+					<div class="form-group">
+						<label for="lineId">LINEID</label>
+						<input th:field="*{lineId}" th:errorclass="fieldError" type="text" class="form-control" id="lineId" placeholder="ヤマダハナコ">
+					</div>
+					<!--   /lineId -->
+
+
+					<!--   realAge -->
+					<div class="form-group">
+						<label for="email">メールアドレス</label>
+						<input th:field="*{email}" th:errorclass="fieldError" type="email" class="form-control" id="email" placeholder="info@sekapato.com">
+					</div>
+					<!--   /realAge -->
+
+					<!-- identificationFlg -->
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="checkbox" th:value="1" class="form-check-input" th:field="*{identificationFlg}" id="identificationFlg" th:errorclass="fieldError">
+							本人確認済
+						</label>
+					</div>
+					<!-- /identificationFlg -->
+
+
+					<!--   height -->
+					<div class="form-group">
+						<label for="height">身長</label>
+						<input th:field="*{height}" th:errorclass="fieldError" type="text" class="form-control" id="height" placeholder="160">
+					</div>
+					<!--   /height -->
+
+
+					<!--   cup -->
+					<div class="form-group">
+						<label for="cup">カップ</label>
+						<select class="form-control" id="cup" th:field="*{cup}">
+							<option th:field="*{cup}" id="cup" th:value="A">A</option>
+							<option th:field="*{cup}" id="cup" th:value="B">B</option>
+							<option th:field="*{cup}" id="cup" th:value="C">C</option>
+							<option th:field="*{cup}" id="cup" th:value="D">D</option>
+							<option th:field="*{cup}" id="cup" th:value="E">E</option>
+							<option th:field="*{cup}" id="cup" th:value="F">F</option>
+							<option th:field="*{cup}" id="cup" th:value="G">G</option>
+							<option th:field="*{cup}" id="cup" th:value="H">H</option>
+						</select>
+					</div>
+					<!--   /cup -->
+
+
+					<!--   waist -->
+					<div class="form-group">
+						<label for="kana">ウェスト</label>
+						<input th:field="*{waist}" th:errorclass="fieldError" type="text" class="form-control" id="waist" placeholder="58">
+					</div>
+					<!--   /waist -->
+
+
+					<!--   hip -->
+					<div class="form-group">
+						<label for="hip">ヒップ</label>
+						<input th:field="*{hip}" th:errorclass="fieldError" type="text" class="form-control" id="hip" placeholder="80">
+					</div>
+					<!--   /hip -->
+
+					<!--   type -->
+					<div class="form-group">
+						<label for="type">交際タイプ</label>
+						<select class="form-control" id="type" th:field="*{type}">
+							<option th:field="*{type}" id="type" value="1">A</option>
+							<option th:field="*{type}" id="type" value="2">B</option>
+							<option th:field="*{type}" id="type" value="3">C</option>
+							<option th:field="*{type}" id="type" value="4">D</option>
+							<option th:field="*{type}" id="type" value="5">E</option>
+						</select>
+					</div>
+					<!--   /type -->
+
+
+					<!--   userClass -->
+					<div class="form-group">
+						<label for="userClass">クラス</label>
+						<select class="form-control" id="type" th:field="*{userClass}">
+							<option th:field="*{userClass}" id="userClass" value="1">ゴールド</option>
+							<option th:field="*{userClass}" id="userClass" value="2">サファイア</option>
+							<option th:field="*{userClass}" id="userClass" value="3">ルビー</option>
+							<option th:field="*{userClass}" id="userClass" value="4">プラチナ</option>
+						</select>
+					</div>
+					<!--   /realAge -->
+
+					<!--   occupation -->
+					<div class="form-group">
+						<label for="occupation">職業</label>
+						<input th:field="*{occupation}" th:errorclass="fieldError" type="text" class="form-control" id="occupation" placeholder="受付嬢">
+					</div>
+					<!--   /occupation -->
+
+
+					<!--   bloodType -->
+					<div class="form-group">
+						<label for="bloodType">血液型</label>
+						<select class="form-control" id="bloodType" th:field="*{bloodType}">
+							<option th:field="*{bloodType}" id="bloodType" value="A">A</option>
+							<option th:field="*{bloodType}" id="bloodType" value="B">B</option>
+							<option th:field="*{bloodType}" id="bloodType" value="O">O</option>
+							<option th:field="*{bloodType}" id="bloodType" value="AB">AB</option>
+						</select>
+					</div>
+					<!--   /bloodType -->
+
+					<!--   language -->
+					<div class="form-group">
+						<label for="language">言語</label>
+						<input th:field="*{language}" th:errorclass="fieldError" type="text" class="form-control" id="language" placeholder="日本語・英語">
+					</div>
+					<!--   /language -->
+
+					<!--   golfFlg -->
+					<fieldset class="form-group">
+						<legend>ゴルフ</legend>
+						<div class="form-check">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="golfFlg" id="golfFlg" value="true" checked>
+								する
+
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="golfFlg" id="golfFlg" value="false">
+								しない
+
+							</label>
+						</div>
+					</fieldset>
+					<!--   /golfFlg -->
+
+					<!--   hobby -->
+					<div class="form-group">
+						<label for="hobby">趣味</label>
+						<input th:field="*{hobby}" th:errorclass="fieldError" type="text" class="form-control" id="hobby" placeholder="料理">
+					</div>
+					<!--   /hobby -->
+
+					<!--   charmPoint -->
+					<div class="form-group">
+						<label for="charmPoint">チャームポイント</label>
+						<input th:field="*{charmPoint}" th:errorclass="fieldError" type="text" class="form-control" id="charmPoint" placeholder="笑顔">
+					</div>
+					<!--   /charmPoint -->
+
+					<!-- smokingFlg -->
+					<fieldset class="form-group">
+						<legend>ゴルフ</legend>
+						<div class="form-check">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="smokingFlg" id="smokingFlg" value="true" checked>
+								する
+
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="smokingFlg" id="smokingFlg" value="false">
+								しない
+
+							</label>
+						</div>
+					</fieldset>
+					<!-- /smokingFlg -->
+
+
+					
+                    <!-- akcholeFlg -->
+                    <fieldset class="form-group">
+                        <legend>お酒</legend>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="alcholeFlg" id="alcholeFlg" value="true" checked>
+                                する
+
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="alcholeFlg" id="alcholeFlg" value="false">
+                                しない
+
+                            </label>
+                        </div>
+                    </fieldset>
+                    <!-- /smokingFlg -->
+					<!--   realAge -->
+					<div class="form-group">
+						<label for="aboutOffer">オファーについて</label>
+						<input th:field="*{aboutOffer}" th:errorclass="fieldError" type="text" class="form-control" id="aboutOffer" placeholder="">
+					</div>
+					<!--   /realAge -->
+
+					<!--   comment -->
+					<div class="form-group">
+						<label for="comment">コメント</label>
+						<textarea th:field="*{comment}" th:errorclass="fieldError" type="text" class="form-control" id="comment" placeholder="" rows="3"></textarea>
+					</div>
+					<!--   /comment -->
+
+
+					<!--   url -->
+					<div class="form-group">
+						<label for="url">YOU TUBE URL</label>
+						<input th:field="*{url}" th:errorclass="fieldError" type="text" class="form-control" id="url" placeholder="">
+					</div>
+					<!--   /url -->
+
+
+
+					<div class="form-group">
+						<label for="exampleInputFile">写真</label>
+						<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+						<small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+					</div>
+
+					<button type="submit" id="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

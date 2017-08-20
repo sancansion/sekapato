@@ -4,6 +4,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.data.repository.CrudRepository;
 
+import com.sekapato.entity.User;
+
 /**
  * A DAO for the entity User is simply created by extending the CrudRepository
  * interface provided by spring. The following methods are some of the ones

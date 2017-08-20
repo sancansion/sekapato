@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>検索/一覧画面</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/css/bootstrap.css" rel="stylesheet" />
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+<!-- Custom styles for this template -->
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<a href="/girlinput">新規登録</a>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				
+					<table id="table" class="table">
+						<thead>
+							<tr>
+								<th>delete</th>
+								<th>modify</th>
+								<th>id</th>
+								<th>realName</th>
+								<th>realKana</th>
+								<th>name</th>
+								<th>kana</th>
+								<th>realAge</th>
+								<th>age</th>
+								<th>address</th>
+								<th>tel</th>
+								<th>lineId</th>
+								<th>email</th>
+								<th>identificationFlg</th>
+								<th>height</th>
+								<th>cup</th>
+								<th>waist</th>
+								<th>hip</th>
+								<th>type</th>
+								<th>userClass</th>
+								<th>occupation</th>
+								<th>bloodType</th>
+								<th>langauge</th>
+								<th>golfFlg</th>
+								<th>hobby</th>
+								<th>charmPoint</th>
+								<th>smokingFlg</th>
+								<th>akcholeFlg</th>
+								<th>aboutOffer</th>
+								<th>comment</th>
+								<th>url</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="girl:${list}">
+							
+								<td>
+								<a href="/edit/${girl.id}" th:href="@{/edit/{id}(id=${girl.id})}">
+									<button type="submit" id="submit" name="action" value="modify" class="btn btn-primary">Modify</button>
+								</a>
+								</td>
+								<td>
+								<a href="/delete/${girl.id}" th:href="@{/delete/{id}(id=${girl.id})}">
+									<button type="submit" id="submit" name="action" value="delete" class="btn btn-primary">Delete</button>
+								</a>
+								</td>
+
+                                        
+								<td th:text="${girl.id}"> <input type="hidden" th:text="*{id}" th:field="*{girl.id}" /></td>
+								<td th:text="${girl.realName}"></td>
+								<td th:text="${girl.realKana}"></td>
+								<td th:text="${girl.name}"></td>
+								<td th:text="${girl.kana}"></td>
+								<td th:text="${girl.realAge}"></td>
+								<td th:text="${girl.age}"></td>
+								<td th:text="${girl.address}"></td>
+								<td th:text="${girl.tel}"></td>
+								<td th:text="${girl.lineId}"></td>
+								<td th:text="${girl.email}"></td>
+								<td th:text="${girl.identificationFlg}"></td>
+								<td th:text="${girl.height}"></td>
+								<td th:text="${girl.cup}"></td>
+								<td th:text="${girl.waist}"></td>
+								<td th:text="${girl.hip}"></td>
+								<td th:text="${girl.type}"></td>
+								<td th:text="${girl.userClass}"></td>
+								<td th:text="${girl.occupation}"></td>
+								<td th:text="${girl.bloodType}"></td>
+								<td th:text="${girl.language}"></td>
+								<td th:text="${girl.golfFlg}"></td>
+								<td th:text="${girl.hobby}"></td>
+								<td th:text="${girl.charmPoint}"></td>
+								<td th:text="${girl.smokingFlg}"></td>
+								<td th:text="${girl.akcholeFlg}"></td>
+								<td th:text="${girl.aboutOffer}"></td>
+								<td th:text="${girl.comment}"></td>
+								<td th:text="${girl.url}"></td>
+								<td th:text="${girl.comment}"></td>
+								<td th:text="${girl.url}"></td>
+
+							</tr>
+
+						</tbody>
+					</table>
+					
+			</div>
+		</div>
+	</div>
+</body>
+</html>

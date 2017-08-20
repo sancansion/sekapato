@@ -1,11 +1,7 @@
 package com.sekapato.entity;
 
-import javax.persistence.Column;
-
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
-
-import com.tuyano.springboot.Phone;
 
 public class MailForm {
 
